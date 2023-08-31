@@ -1,0 +1,53 @@
+
+@import './mixins.scss';
+@import './variables.scss';
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+body,
+html {
+  font-family: 'Roboto Slab', serif;
+  background-color: $primary-black;
+  color: #fff;
+}
+
+%button-styles {
+  font-size: 20px;
+  min-height: 52px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 22px;
+  background-color: $primary-blue;
+}
+
+.primary-button {
+  @extend %button-styles;
+}
+
+.primary-button-large {
+  @extend %button-styles;
+  width: 100%;
+  font-size: 20px;
+}
+
+.container {
+  position: relative;
+  min-height: 500px;
+  background-color: $primary-black-pale;
+  border-radius: 12px;
+  padding: 20px 40px;
+  margin: 20px 40px;
+
+  @include respond-to('laptop') {
+    padding: 20px 20px;
+    margin: 20px 10px;
+  }
+}
